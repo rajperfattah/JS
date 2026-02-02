@@ -135,6 +135,7 @@ document.writeln("toLowerCase(): '" + lowerStr + "'<br>");
 let wellFormed = str.isWellFormed();
 document.writeln("isWellFormed(): " + wellFormed + "<br>");
 
+
 // 14. String.toWellFormed(): Returns a well-formed string by replacing lone surrogates.
 // Example:
 let wellFormedStr = str.toWellFormed();
@@ -192,6 +193,69 @@ document.writeln("split(' '): " + JSON.stringify(splitArr) + "<br>");
 let text8 = "Please visit Microsoft!";
 let newText = text8.replace(/MICROSOFT/i, "W3Schools");
 document.writeln("replace with regex: '" + newText + "'<br>");
+
+/*
+String Search Methods: These methods are used to search for substrings or patterns within a string.
+Practicing all search methods one by one with detailed comments.
+*/
+
+// Define another sample string for search examples
+let searchStr = "Hello, World! Hello again.";
+document.writeln("Search sample string: '" + searchStr + "'<br><br>");
+
+// 24. String.indexOf(searchValue, start): Returns the index of the first occurrence of searchValue.
+// start: optional, position to start searching from.
+// Returns -1 if not found.
+// Example:
+let index = searchStr.indexOf("Hello");
+document.writeln("indexOf('Hello'): " + index + "<br>");
+let indexFrom = searchStr.indexOf("Hello", 5);
+document.writeln("indexOf('Hello', 5): " + indexFrom + "<br>");
+
+// 25. String.lastIndexOf(searchValue, start): Returns the index of the last occurrence of searchValue.
+// start: optional, position to start searching backwards from.
+// Returns -1 if not found.
+// Example:
+let lastIndex = searchStr.lastIndexOf("Hello");
+document.writeln("lastIndexOf('Hello'): " + lastIndex + "<br>");
+
+// 26. String.search(regexp): Searches for a match between a regular expression and the string.
+// Returns the index of the first match, or -1 if not found.
+// Example:
+let searchIndex = searchStr.search(/World/);
+document.writeln("search(/World/): " + searchIndex + "<br>");
+
+// 27. String.match(regexp): Retrieves the result of matching a string against a regular expression.
+// Returns an array of matches, or null if no match.
+// Example:
+let matchResult = searchStr.match(/Hello/g);
+document.writeln("match(/Hello/g): " + JSON.stringify(matchResult) + "<br>");
+
+// 28. String.matchAll(regexp): Returns an iterator of all results matching a string against a regular expression.
+// Example:
+let matchAllResult = [...searchStr.matchAll(/Hello/g)];
+document.writeln("matchAll(/Hello/g): " + JSON.stringify(matchAllResult) + "<br>");
+
+// 29. String.includes(searchValue, start): Checks if the string contains the specified searchValue.
+// start: optional, position to start searching from.
+// Returns true or false.
+// Example:
+let includesResult = searchStr.includes("World");
+document.writeln("includes('World'): " + includesResult + "<br>");
+
+// 30. String.startsWith(searchValue, start): Checks if the string starts with the specified searchValue.
+// start: optional, position to start checking from.
+// Returns true or false.
+// Example:
+let startsWithResult = searchStr.startsWith("Hello");
+document.writeln("startsWith('Hello'): " + startsWithResult + "<br>");
+
+// 31. String.endsWith(searchValue, length): Checks if the string ends with the specified searchValue.
+// length: optional, length of the string to search.
+// Returns true or false.
+// Example:
+let endsWithResult = searchStr.endsWith("again.");
+document.writeln("endsWith('again.'): " + endsWithResult + "<br>");
 
 
 </script>
