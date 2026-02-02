@@ -22,5 +22,63 @@ let age=8;
 let text = (age < 18) ? "Minor" : "Adult";
 
 
+// switch statement
+
+let day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}
+document.writeln(day);
+
+// another example----------------
+
+switch (new Date().getDay()) {
+  case 4:
+  case 5:
+    text = "Soon it is Weekend";
+    break;
+  case 0:
+  case 6:
+    text = "It is Weekend";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}
+
+
+
+
+
+
+
+
+
+// The Nullish Coalescing Operator (??)
+// The ?? operator returns the right operand when the left operand is nullish (null or undefined), otherwise it returns the left operand.
+
+Example
+let name = null;
+let text1 = "missing";
+let result = name ?? text1;
+document.writeln(result)
 </script>
 </html>
