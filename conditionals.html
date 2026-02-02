@@ -11,6 +11,7 @@
 <script>
     // conditionals--------------
     // if statement:Use the JavaScript if statement to execute a block of code when a condition is true.
+    /*
     let hour=prompt("Enter houts")
     if (hour < 18) {
   greeting = "Good day";
@@ -48,9 +49,10 @@ switch (new Date().getDay()) {
     day = "Saturday";
 }
 document.writeln(day);
+*/
 
 // another example----------------
-
+/*
 switch (new Date().getDay()) {
   case 4:
   case 5:
@@ -63,6 +65,7 @@ switch (new Date().getDay()) {
   default:
     text = "Looking forward to the Weekend";
 }
+    */
 
 
 
@@ -75,10 +78,16 @@ switch (new Date().getDay()) {
 // The Nullish Coalescing Operator (??)
 // The ?? operator returns the right operand when the left operand is nullish (null or undefined), otherwise it returns the left operand.
 
-Example
-let name = null;
-let text1 = "missing";
-let result = name ?? text1;
-document.writeln(result)
+// Example
+// let name = null;
+// let text1 = "missing";
+// let result = name ?? text1;
+// document.writeln(result)
+
+let office_time=9;
+let arrivalTime=prompt("Enter arrival time:");
+if(arrivalTime>office_time){
+    console.log("you are late");
+}
 </script>
 </html>

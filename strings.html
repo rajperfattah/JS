@@ -17,10 +17,182 @@
 let carName1 = "Volvo XC60";
 
 document.writeln(carName1)
+document.writeln("<br>")
 // Using single quotes:
 let carName2 = 'Volvo XC60';
 document.writeln(carName2)
+document.writeln("<br>")
+
+// using templets ie backticks.   `  `
+let details= `i am abdul fattah my father's name is "abdul qudoos"`
+document.writeln(details)
+ // string length.
+ document.writeln(carName2.length);
+
+ document.writeln("<br>")
+ let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}!`;
+document.writeln(text);
+
+document.writeln("<br>");
 
  
+let price = 10;
+let VAT = 0.25;
+
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+document.writeln(total)
+/*
+Javascript strings are primitive and immutable: All string methods produce a new string without altering the original string.
+
+Practicing all string methods one by one with detailed comments.
+*/
+
+// Define a sample string for practice
+let str = "Hello, World!";
+document.writeln("Sample string: " + str + "<br><br>");
+
+// 1. String.length: Returns the length of the string (number of characters).
+// It is a property, not a method, so no parentheses.
+// Example:
+let len = str.length;
+document.writeln("length: " + len + "<br>");
+
+// 2. String.charAt(index): Returns the character at the specified index (0-based).
+// If index is out of range, returns an empty string.
+// Example:
+let char = str.charAt(0);
+document.writeln("charAt(0): '" + char + "'<br>");
+
+// 3. String.charCodeAt(index): Returns the Unicode value (UTF-16 code unit) of the character at the specified index.
+// If index is out of range, returns NaN.
+// Example:
+let code = str.charCodeAt(0);
+document.writeln("charCodeAt(0): " + code + "<br>");
+
+// 4. String.codePointAt(index): Returns the Unicode code point value of the character at the specified index.
+// Similar to charCodeAt but handles surrogate pairs for characters outside BMP.
+// If index is out of range, returns undefined.
+// Example:
+let codePoint = str.codePointAt(0);
+document.writeln("codePointAt(0): " + codePoint + "<br>");
+
+// 5. String.concat(str1, str2, ...): Joins two or more strings and returns a new string.
+// Equivalent to using the + operator.
+// Example:
+let concatStr = str.concat(" How are you?");
+document.writeln("concat: '" + concatStr + "'<br>");
+
+// 6. String.at(index): Returns the character at the specified index.
+// Supports negative indices (counts from the end).
+// If index is out of range, returns undefined.
+// Example:
+let atChar = str.at(0);
+document.writeln("at(0): '" + atChar + "'<br>");
+let atCharNeg = str.at(-1);
+document.writeln("at(-1): '" + atCharNeg + "'<br>");
+
+// 7. String[index]: Bracket notation to access character at index.
+// Similar to charAt, but returns undefined if out of range.
+// Example:
+let bracketChar = str[0];
+document.writeln("[0]: '" + bracketChar + "'<br>");
+
+// 8. String.slice(start, end): Extracts a section of the string and returns a new string.
+// start: index to start extraction (inclusive), end: index to end (exclusive).
+// Supports negative indices.
+// Example:
+let sliceStr = str.slice(0, 5);
+document.writeln("slice(0, 5): '" + sliceStr + "'<br>");
+
+// 9. String.substring(start, end): Similar to slice, but does not support negative indices.
+// If start > end, it swaps them.
+// Example:
+let subStr = str.substring(0, 5);
+document.writeln("substring(0, 5): '" + subStr + "'<br>");
+
+// 10. String.substr(start, length): Extracts a substring starting at start with the specified length.
+// Deprecated, use slice or substring instead.
+// Example:
+let substrStr = str.substr(0, 5);
+document.writeln("substr(0, 5): '" + substrStr + "'<br>");
+
+// 11. String.toUpperCase(): Converts the string to uppercase.
+// Example:
+let upperStr = str.toUpperCase();
+document.writeln("toUpperCase(): '" + upperStr + "'<br>");
+
+// 12. String.toLowerCase(): Converts the string to lowercase.
+// Example:
+let lowerStr = str.toLowerCase();
+document.writeln("toLowerCase(): '" + lowerStr + "'<br>");
+
+// 13. String.isWellFormed(): Checks if the string is well-formed (no lone surrogates).
+// Returns true or false.
+// Example:
+let wellFormed = str.isWellFormed();
+document.writeln("isWellFormed(): " + wellFormed + "<br>");
+
+// 14. String.toWellFormed(): Returns a well-formed string by replacing lone surrogates.
+// Example:
+let wellFormedStr = str.toWellFormed();
+document.writeln("toWellFormed(): '" + wellFormedStr + "'<br>");
+
+// 15. String.trim(): Removes whitespace from both ends of the string.
+// Example:
+let trimStr = "  Hello, World!  ".trim();
+document.writeln("trim(): '" + trimStr + "'<br>");
+
+// 16. String.trimStart(): Removes whitespace from the start of the string.
+// Example:
+let trimStartStr = "  Hello, World!  ".trimStart();
+document.writeln("trimStart(): '" + trimStartStr + "'<br>");
+
+// 17. String.trimEnd(): Removes whitespace from the end of the string.
+// Example:
+let trimEndStr = "  Hello, World!  ".trimEnd();
+document.writeln("trimEnd(): '" + trimEndStr + "'<br>");
+
+// 18. String.padStart(targetLength, padString): Pads the string from the start to reach targetLength using padString.
+// Default padString is space.
+// Example:
+let padStartStr = str.padStart(20, "*");
+document.writeln("padStart(20, '*'): '" + padStartStr + "'<br>");
+
+// 19. String.padEnd(targetLength, padString): Pads the string from the end to reach targetLength using padString.
+// Example:
+let padEndStr = str.padEnd(20, "*");
+document.writeln("padEnd(20, '*'): '" + padEndStr + "'<br>");
+
+// 20. String.repeat(count): Returns a new string with the original string repeated count times.
+// Example:
+let repeatStr = str.repeat(2);
+document.writeln("repeat(2): '" + repeatStr + "'<br>");
+
+// 21. String.replace(searchValue, replaceValue): Replaces the first occurrence of searchValue with replaceValue.
+// Can use string or regex.
+// Example:
+let replaceStr = str.replace("World", "Universe");
+document.writeln("replace('World', 'Universe'): '" + replaceStr + "'<br>");
+
+// 22. String.replaceAll(searchValue, replaceValue): Replaces all occurrences of searchValue with replaceValue.
+// Example:
+let replaceAllStr = str.replaceAll("l", "L");
+document.writeln("replaceAll('l', 'L'): '" + replaceAllStr + "'<br>");
+
+// 23. String.split(separator, limit): Splits the string into an array of substrings based on separator.
+// limit: optional, maximum number of splits.
+// Example:
+let splitArr = str.split(" ");
+document.writeln("split(' '): " + JSON.stringify(splitArr) + "<br>");
+
+// Additional example for replace with regex (case insensitive)
+let text8 = "Please visit Microsoft!";
+let newText = text8.replace(/MICROSOFT/i, "W3Schools");
+document.writeln("replace with regex: '" + newText + "'<br>");
+
+
 </script>
 </html>
