@@ -239,5 +239,25 @@ const sayHello1 = function() {
 
 document.writeln(run(sayHello1))
 
+/*
+Hoisting
+Function declarations can be called before they are defined.
+
+Function expressions can not be called before they are defined.
+
+Function declarations are "hoisted" to the top of their scope. This means you can call a function before it is defined in the code:
+
+let sum = add(2, 3); // Will work
+
+function add(a, b) {return a + b;}
+Function expressions are not hoisted in the same way as function declarations.
+
+They are created when the execution reaches their definition, and cannot be called before that point:
+
+let sum = add(2, 3); // ⛔ Will generate error
+
+const add = function (a, b) {return a + b;};
+*/
+
 </script>
 </html>

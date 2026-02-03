@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    Arrow Functions allow a shorter syntax for function expressions.
+
+You can skip the function keyword, the return keyword, and the curly brackets:
+
+const add = (a, b) => a * b;
+*/
+
+// normal function:
+function add(a,b){
+    return a+b;
+}
+document.writeln(add(2,4));
+
+//Expression function:
+const add1= function (a,b) {
+    return a+b;
+  };
+
+document.writeln(add1(4,5))
+
+// arrow function:
+const add2=(a,b)=> (a+b);
+document.writeln(add2(5,6));
+document.writeln("<br>")
+
+// arrow function to show simple message.
+const hello = () => "Hello World!";
+document.writeln(hello())
+
+</script>
+</html>
