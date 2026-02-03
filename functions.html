@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <b>functions</b>
+    
+</body>
+<script>
+let defination=`Functions are Code Blocks
+
+Functions are reusable code blocks designed to perform a particular task.
+
+Functions are executed when they are called or invoked.
+
+Functions are fundamental in all programming.
+A function can be created with the function keyword, a name, and parentheses.
+
+The code to run is written inside curly brackets. `
+document.writeln(defination);
+document.writeln("<br><br>")
+// example:
+function myFunction(){
+    document.writeln("Hellow dear !");
+}
+myFunction();
+
+/*
+Functions are defined with the function keyword:
+
+followed by the function name
+followed by parentheses ( )
+followed by brackets { }
+The function name follows the naming rules for variables.
+
+Optional parameters are listed inside parentheses: ( p1, p2, ... )
+
+Code to be executed is listed inside curly brackets: { }
+
+Functions can return an optional value back to the caller.
+
+Example
+Function to multiply two numbers:
+
+function multiply(a, b) {
+  return a * b;
+}
+  */
+ function multiply(a,b){
+    return a*b;
+ }
+ 
+ let res=multiply(5,7);
+ document.writeln(res);
+ document.writeln("<br>");
+
+ // write a function to convert farnhite to celcius.
+ function celcius(farnhite){
+    return (5/9)*(farnhite-32);
+ }
+ let re=celcius(77);
+ document.writeln(re);
+
+ /*
+ Calling vs Referencing a Function
+This is an important difference:
+
+sayHello refers to the function itself. It returns the function.
+
+sayHello() refers to the function result. It returns the result
+*/
+
+/*
+Functions Can Be Called from Anywhere
+You can call functions from other functions, from events, or from any code block.
+
+Examples
+function sayHello() {
+  return "Hello World";
+}
+
+function showHello() {
+  document.getElementById("demo").innerHTML = sayHello();
+}
+  */
+
+  function sayHello() {
+  return "Hello World";
+}
+
+function showHello() {
+  document.writeln(sayHello());
+}
+showHello()
+
+/*
+Parameters vs. Arguments
+In JavaScript, function parameters and arguments are distinct concepts:
+
+Parameters are the names listed in the function definition.
+
+Arguments are the real values passed to, and received by the function.
+*/
+
+
+/*
+Default Parameter Values
+ECMAScript 2015 allows function parameters to have default values.
+
+The default value is used if no argument is provided.
+
+Example
+If y is not passed or undefined, then y = 10.
+
+function myFunction(x, y = 10) {
+  return x + y;
+}
+myFunction(5);
+*/
+function function2(x,y=20){
+    return x*y;
+}
+let b=function2(5);
+document.writeln(b);
+/*
+The return Statement
+When JavaScript reaches a return statement, the function stops executing.
+
+The value after return is sent back to the caller.
+*/
+// function reset parameter i-e (... functionName)
+function findMax(...numbers) {
+  let max = numbers[0];
+
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+  }
+  return max;
+}
+
+let x = findMax(1, 123, 500, 115, 44, 88);
+document.writeln(x);
+document.writeln("<br><br>");
+
+/*
+The Arguments Object
+JavaScript functions have a built-in object called the arguments object.
+
+The argument object contains an array of the arguments used when the function was called (invoked).
+
+This way you can simply use a function to find (for instance) the highest value in a list of numbers:
+*/
+function sumAll(){
+    let sum=0;
+    for(let i=1;i<arguments.length;i++){
+        sum=sum+arguments[i];
+    }
+    return sum;
+}
+let r1=sumAll(2,3,4,5,6,7,8,8);
+document.writeln("Sum is : "+r1);
+document.writeln("<br>");
+
+/*
+What is a Function Expression?
+A function expression is a function stored in a variable.
+
+// Standard Function
+function multiply(a, b) {
+  return a * b;
+}
+
+// Function Expression
+const multiply = function(a, b) {
+  return a * b;
+};
+*/
+const multiply1 = function(a, b) {
+  return a * b;
+};
+document.writeln(multiply1(3,4));
+document.writeln("<br><br>");
+
+/*
+Anonymous Functions
+Function expressions are commonly used to create anonymous functions.
+
+The function above is actually function without a name.
+
+Functions stored in variables do not need names.
+
+The variable name is used to call the function.
+*/
+
+/*
+Note
+But, function expressions can also be a named:
+
+const add = function add(a, b) {return a + b;};
+
+Function Expressions Use Semicolons
+A function expression is a JavaScript statement.
+
+That is why it usually ends with a semicolon.
+*/
+
+
+/*
+Functions Stored in Variables
+Because a function expression is stored in a variable, it can be used like a value.
+This is useful when passing functions to other functions (callbacks).
+
+A function expression can be assigned to a variable, passed as an argument to another function, or returned from a function.
+
+Example
+function run(fn) {
+  return fn();
+}
+
+const sayHello = function() {
+  return "Hello";
+};
+
+run(sayHello);
+*/
+
+function run(fn) {
+  return fn();
+}
+
+const sayHello1 = function() {
+  return "Hello";
+};
+
+document.writeln(run(sayHello1))
+
+</script>
+</html>
