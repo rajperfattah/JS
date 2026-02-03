@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+What are JavaScript Objects?
+Objects are variables that can store both values and functions.
+
+Values are stored as key:value pairs called properties.
+
+Functions are stored as key:function() pairs called methods.
+    */
+
+   // example:
+   const car={
+    
+    type :"Fiat",
+    speed:60,
+    model:"BMW",
+    color:"White",
+    price:4500000,
+     speedUp:function(){
+        return this.speed+40;
+    },
+    speedDown:function(){
+        return this.speed-50;
+    }
+   };
+   document.writeln(car.price);
+   document.writeln("<br>")
+
+   document.writeln("Currunt speed : "+car.speed+"<br>");
+   document.writeln("After Race : "+car.speedUp()+"<br>");
+   document.writeln("After break: "+car.speedDown()+"<br>");
+
+   /*
+   Object Literal
+An object literal "literally" describes an object using a concise syntax with zero or more key:value pairs inside curly braces to describe all the object properties:
+*/
+
+/*
+You can also create an empty object, and add the properties later:
+
+Example 3
+// Create an Object
+const person = {};
+
+// Add Properties
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+*/
+// Create an Object
+const person = {};
+
+// Add Properties
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+// pronting whole object with keys and values
+document.write(JSON.stringify(person));
+document.writeln("<br>");
+// printing only keys of an object
+document.writeln(Object.keys(person));
+document.writeln("<br>")
+
+// printing only values of an object
+document.writeln(Object.values(person));
+document.writeln("<br>")
+
+/*
+Deleting Properties
+The delete keyword deletes a property from an object:
+
+Examples
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+};
+
+delete person.age;
+*/
+
+/*
+Check if a Property Exists
+Use the in operator to check if a property exists in an object:
+
+Example
+const person = {
+  firstName: "John",
+  lastName: "Doe"
+};
+
+let result = ("firstName" in person);
+*/
+
+/*
+Nested Objects
+Property values in an object can be other objects:
+
+Example
+myObj = {
+  name:"John",
+  age:30,
+  myCars: {
+    car1:"Ford",
+    car2:"BMW",
+    car3:"Fiat"
+  }
+}
+You can access nested objects using the dot notation or the bracket notation:
+
+Examples
+myObj.myCars.car2;
+myObj.myCars["car2"];
+myObj["myCars"]["car2"];
+*/
+myObj = {
+  name:"John",
+  age:30,
+  myCars: {
+    car1:"Ford",
+    car2:"BMW",
+    car3:"Fiat"
+  }
+}
+let a=myObj.myCars.car2;
+document.writeln(a)
+
+// Object Methods:Methods are actions that can be performed on objects.Methods are functions stored as a property values.
+
+// Assign person.name to a function
+person.name = function () {
+  return (this.firstName + " " + this.lastName).toUpperCase;
+};
+document.writeln(person.name());
+document.writeln("<br><br>");
+
+
+/*
+JavaScript this Keyword
+this in Objects
+The this keyword refers to an object.
+
+In JavaScript, this is used to access the object that is calling a method.
+
+this in an Object Method
+When used inside an object method, this refers to the object.
+//The this keyword makes it possible to use the same method with different objects.
+
+Example
+*/
+const person1 = {
+  name: "John",
+  hello: function() {
+    return "Hello " + this.name;
+  }
+};
+
+const person2 = {
+  name: "Anna",
+  hello: function() {
+    return "Hello " + this.name;
+  }
+};
+
+document.writeln(person.hello)
+document.writeln("<br>")
+
+/*this Alone
+When used alone, this refers to the global object.
+
+In a browser, the global object is the window object.
+*/
+let x= this;
+document.writeln(x);
+document.writeln("<br><br>");
+
+/*
+Some solutions to display JavaScript objects are:
+
+Displaying the Object Properties by name
+Displaying the Object Properties in a Loop
+Displaying the Object using Object.values()
+Displaying the Object using JSON.stringify()
+*/
+
+// Displaying the object properties by name
+// Create an Object
+const person3 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Add Properties
+let text = person3.name + "," + person3.age + "," + person3.city;
+document.writeln(text)
+document.writeln("<br><br>");
+
+// using for in loop
+const person4={
+    name:"Abdul Fattah",
+    age:30,
+    coty:"Mehrabput"
+};
+
+let res1="";
+for(let x in person4){
+    res1=res1+person4[x]+" ";
+}
+document.writeln(res1);
+document.writeln("<br><br>");
+
+/*Using Object.values()
+Object.values() creates an array from the property values:
+*/
+const person5={
+    name:"Jhon",
+    age:30,
+    city:"New York"
+
+};
+// create an aray 
+const myarray=Object.values(person5)
+
+// stringify the array
+let res2=myarray.toString();
+document.writeln(res2);
+document.writeln("<br><br>");
+
+
+</script>
+</html>
