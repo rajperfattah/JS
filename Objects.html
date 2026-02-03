@@ -239,6 +239,37 @@ let res2=myarray.toString();
 document.writeln(res2);
 document.writeln("<br><br>");
 
+//Using Object.entries() :Object.entries() makes it simple to use objects in loops:
+const fruits = {Bananas:300, Oranges:200, Apples:500};
+
+let res3 = "";
+for (let [fruit, value] of Object.entries(fruits)) {
+  res3 += fruit + ": " + value + "<br>";
+}
+document.writeln("<br><br>");
+
+/*
+Using JSON.stringify()
+JavaScript objects can be converted to a string with JSON method JSON.stringify().
+
+JSON.stringify() is included in JavaScript and supported in all browsers.
+
+Note:
+The result will be a string written in JSON notation:
+
+{"name":"John","age":50,"city":"New York"}
+*/
+
+// Create an Object
+const person6 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Stringify Object
+let res4 = JSON.stringify(person6);
+document.writeln("<br><br>");
 
 </script>
 </html>
