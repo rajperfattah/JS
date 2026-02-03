@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+
+    An array is a special variable, which can hold more than one value:
+    const cars = ["Saab", "Volvo", "BMW"];
+
+    An Array is an object type designed for storing data collections.
+
+Key characteristics of JavaScript arrays are:
+
+Elements: An array is a list of values, known as elements.
+
+Ordered: Array elements are ordered based on their index.
+
+Zero indexed: The first element is at index 0, the second at index 1, and so on.
+
+Dynamic size: Arrays can grow or shrink as elements are added or removed.
+
+Heterogeneous: Arrays can store elements of different data types (numbers, strings, objects and other arrays).
+*/
+//An array can hold many values under a single name, and you can access the values by referring to an index number
+
+const cars = ["Saab", "Volvo", "BMW"];// array declaration and initialization using array literal
+document.writeln(cars[0]); //Saab
+document.writeln("<br>");
+document.writeln(cars[1]); //Volvo
+document.writeln("<br>");
+document.writeln(cars[2]); //BMW
+document.writeln("<br><br>");
+//You can also use the JavaScript keyword new to create an array:
+const fruits = new Array("Apple", "Banana", "Orange");
+
+// also declaration and initialization seperately
+// const cars = [];
+// cars[0]= "Saab";
+// cars[1]= "Volvo";
+// cars[2]= "BMW";
+
+
+// changing an array element
+fruits[1] = "Mango"; //changing Banana to Mango
+document.writeln(fruits[0]); //Apple
+document.writeln("<br>");
+
+// converting an array to string
+document.writeln(fruits.toString()); //Apple,Mango,Orange
+document.writeln("<br>");
+
+// accessing full array
+document.writeln(fruits); //Apple,Mango,Orange
+document.writeln("<br>");
+
+//The real strength of JavaScript arrays are the built-in array properties and methods:
+let fLen=fruits.length; //length property
+document.writeln("Length of fruits array is : "+fLen);
+document.writeln("<br>");
+
+// sorting an array
+fruits.sort();
+document.writeln("Sorted fruits array : "+fruits);
+document.writeln("<br>");
+
+// loopin array elements through for loop
+let res="";
+for(let i=0;i<fruits.length;i++){
+    res=res+fruits[i]+" ";
+}
+document.writeln("Fruits array elements are : "+res);
+document.writeln("<br><br>");
+
+// looping array elements through for..of loop
+let res1="";
+for(let fruit of fruits){
+    res1=res1+fruit+" ";
+}
+document.writeln("Fruits array elements are : "+res1);
+document.writeln("<br><br>");
+
+// looping array elements through for..in loop
+let res2="";
+for(let index in fruits){
+    res2=res2+fruits[index]+" ";
+}
+document.writeln("Fruits array elements are : "+res2);
+document.writeln("<br><br>");
+
+// looping array elements through forEach() method
+let res3="";
+fruits.forEach(function(fruit){
+    res3=res3+fruit+" ";
+});
+document.writeln("Fruits array elements are : "+res3);
+document.writeln("<br><br>");
+
+// adding an element to an array using push() method
+fruits.push("Pineapple");
+document.writeln("Fruits array after adding Pineapple : "+fruits);
+document.writeln("<br><br>");
+
+//In JavaScript, arrays use numbered indexes.  In JavaScript, objects use named indexes.
+
+// how to identify an array and an object
+document.writeln("Is fruits an array? : "+Array.isArray(fruits)); //true
+document.writeln("<br>");
+const person={name:"Jhon", age:30, city:"New York"};
+document.writeln("Is person an array? : "+Array.isArray(person)); //false
+document.writeln("<br><br>");
+
+//The instanceof operator returns true if an object is created by a given constructor:
+document.writeln("Is fruits an array? : "+(fruits instanceof Array)); //true
+document.writeln("<br>");
+
+const myObj = {
+  name: "John",
+  age: 30,
+  cars: [
+    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+    {name:"BMW", models:["320", "X3", "X5"]},
+    {name:"Fiat", models:["500", "Panda"]}
+  ]
+};
+// iterating nested arrays
+for (let car of myObj.cars) {
+  document.writeln("Car Name:", car.name);
+
+  for (let model of car.models) {
+    document.writeln("  Model:", model);
+  }
+}
+
+</script>
+</html>
