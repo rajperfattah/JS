@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporal date time</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    What is JavaScript Temporal?
+Temporal is the new standard for date and time in JavaScript.
+
+New Temporal objects are designed to replace the old Date object.
+
+Unlike legacy Date, Temporal objects are immutable and provide first-class support for time zones and non-Gregorian calendars.
+
+Temporal separates date and time into distinct classes to prevent "wall-clock" errors.
+*/
+//Temporal objects are the core part of the Temporal API which aims to replace the old Date object.
+
+//The Temporal.Now object has methods for getting the current time in various formats
+
+//Use the Temporal.Now.zonedDateTimeISO() method for current system time:
+
+const now = Temporal.Now.zonedDateTimeISO();
+document.writeln(now);
+document.writeln("<br>");
+
+//Use the Temporal.Now.plainDateISO() method for calender date only:
+const today = Temporal.Now.plainDateISO();
+document.writeln(today);
+
+//The Temporal.Instant Object
+//Temporal.Instant is a JavaScript object representing a single point in time.
+
+instant = Temporal.Instant.from('2026-05-01T00Z')
+document.writeln(instant)
+document.writeln("<br><br>")
+// difference between Date and Temporal
+//Date millisecond / Temporal nanosecond
+
+
+/*
+What is a Plain Date?
+A Temporal.PlainDate Object represents a calendar date without a specific time zone, typically in ISO 8601 format ("2026-05-01").
+
+Plain Dates are used for dates that remain the same regardless of time zone, such as birthdays or holidays.
+*/
+/*
+
+Temporal.PlainDate	Calendar date only (2026-05-21)
+Temporal.PlainTime	Time of day only (14:30:00)
+Temporal.PlainDateTime	Full date and time (2026-01-24 14:30:00)
+Temporal.PlainYearMonth	Year and month only (2026-05)
+Temporal.PlainMonthDay	Month and day only (05-01)
+*/
+const date = new Temporal.PlainDate(2026, 5, 1);
+document.writeln(date);
+document.writeln("<br><br>")
+const date1 = Temporal.PlainDate.from('2026-05-01');
+document.writeln(date1)
+
+</script>
+</html>
