@@ -257,6 +257,13 @@ document.writeln("startsWith('Hello'): " + startsWithResult + "<br>");
 let endsWithResult = searchStr.endsWith("again.");
 document.writeln("endsWith('again.'): " + endsWithResult + "<br>");
 
+let text9 = "The rain in SPAIN stays mainly in the plain";
+let tst=text9.match(/ain/gi);
+document.writeln(tst);
 
+
+let tex = "I love cats. Cats are very easy to love. Cats are very popular."
+const iterator = tex.matchAll("Cats");
+document.writeln(Array.from(iterator))
 </script>
 </html>

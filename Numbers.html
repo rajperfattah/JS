@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    let myNumber = 32;
+myNumber.toString(32);
+myNumber.toString(16);
+myNumber.toString(12);
+myNumber.toString(10);
+myNumber.toString(8);
+myNumber.toString(2);
+*/
+
+let myNumber = 32;
+document.writeln(myNumber.toString(32))
+document.writeln("<br>")
+document.writeln(myNumber.toString(16))
+document.writeln("<br>")
+
+document.writeln(myNumber.toString(12))
+document.writeln("<br>")
+
+document.writeln(myNumber.toString(10))
+document.writeln("<br>")
+
+document.writeln(myNumber.toString(8))
+document.writeln("<br>")
+
+document.writeln(myNumber.toString(2))
+document.writeln("<br>")
+
+/*
+Basic Methods
+Basic number methods can be used on any number:
+
+toString()
+toExponential()
+toFixed()
+toPrecision()
+valueOf()
+Static Methods
+Static methods can only be used on Number:
+
+Number.isFinite()
+Number.isInteger()
+Number.isNan()
+Number.isSafeInteger()
+Number.parseInt()
+Number.parseFloat()
+*/
+
+let num=50;
+
+// number.toString(): returns a number as a string
+let re=num.toString();
+
+document.writeln(re+30);// now this is an string
+document.writeln("<br><br>")
+
+// toString(): can take an radix argumuent to convert the number to different base.
+let x = 123;
+let text = x.toString(2); 
+document.writeln(text);
+document.writeln("<br><br>")
+
+let x1=11011001;
+let text1=x1.toString(10);
+document.writeln(text);
+document.writeln("<br><br>")
+
+// toExponential() method:toExponential() returns a string, with a number rounded and written using exponential notation.A parameter defines the number of characters behind the decimal point:
+let x2=9.656;
+let r=x2.toExponential(2);
+document.writeln(r);
+document.writeln("<br>")
+
+// toFix() method:toFixed() returns a string, with the number written with a specified number of decimals:
+let x3=9.656;
+document.writeln(x3.toFixed(0));
+document.writeln("<br>");
+
+document.writeln(x3.toFixed(2));
+document.writeln("<br>");
+
+document.writeln(x3.toFixed(5));
+document.writeln("<br>");
+
+// toPrecision()method:toPrecision() returns a string, with a number written with a specified length:
+let y =9.656;
+document.writeln(y.toPrecision());
+document.writeln("<br>");
+
+document.writeln(y.toPrecision(2));// perfect for daily use
+document.writeln("<br>");
+
+document.writeln(y.toPrecision(4));
+document.writeln("<br>");
+
+// valueOf() method: returns a number as a number.
+
+//The valueOf() method is used internally in JavaScript to convert Number objects to primitive values
+
+let z=123;
+document.writeln(z.valueOf());
+document.writeln("<br>");
+
+document.writeln((333).valueOf());
+document.writeln("<br>");
+
+// Number() method:The Number() method can be used to convert JavaScript variables to numbers:
+document.writeln(Number(true));
+document.writeln("<br>");
+
+document.writeln(Number(false));
+document.writeln("<br>");
+
+document.writeln(Number("10"));
+document.writeln("<br>");
+
+document.writeln(Number(" 10"));
+document.writeln("<br>");
+
+document.writeln(Number(" 10 "));
+document.writeln("<br>");
+
+document.writeln(Number("10.33"));
+document.writeln("<br>");
+
+document.writeln(Number("10,33"));
+document.writeln("<br>");
+
+document.writeln(Number("10 33"));
+document.writeln("<br>");
+
+document.writeln(Number("Jhon"));
+document.writeln("<br><br>");
+
+/*
+
+Number Object Methods
+These object methods belong to the Number object:
+
+Method	Description
+Number.isInteger()	Returns true if the argument is an integer
+Number.isNaN()	Returns true if the argument is NaN
+Number.isFinite()	Returns true if the argument is not Infinity nor NaN
+Number.isSafeInteger()	Returns true if the argument is a safe integer
+Number.parseFloat()	Converts a string to a number
+Number.parseInt()	Converts a string to a whole number
+*/
+
+
+// Number.isNaN() method:The Number.isNaN() method returns true if the argument is NaN (Not a Number).
+
+/*
+Number Properties
+Number.EPSILON
+Number.MAX_VALUE
+Number.MIN_VALUE
+Number.MAX_SAFE_INTEGER
+Number.MIN_SAFE_INTEGER
+Number.POSITIVE_INFINITY
+Number.NEGATIVE_INFINITY
+Number.NaN
+*/
+
+// EPSILON: Number.EPSILON is the difference between the smallest floating point number greater than 1 and 1.
+let A=Number.EPSILON;
+document.writeln(A);
+document.writeln("<br>")
+
+// MAX_VALUE:Number.MAX_VALUE is a constant representing the largest possible number in JavaScript.
+
+let a1=Number.MAX_VALUE;
+document.writeln(a1);
+document.writeln("<br>")
+
+// bigInt nuumber:
+let b1=BigInt(999999999999999999);
+// also using this way
+let b2=9000008888878n;
+
+// only arathmatic operations can be done between two bigInts, not with anyother number .
+let c1 = 9007199254740995n;
+let c2 = 9007199254740995n;
+
+let c3 = c1 * c2;
+
+// Create a BigInt
+let largeNumber = BigInt("12345678901234567890");
+
+// Conversions
+let num5 = Number(largeNumber);
+
+</script>
+</html>
