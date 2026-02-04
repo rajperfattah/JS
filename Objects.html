@@ -137,11 +137,23 @@ myObj = {
 let a=myObj.myCars.car2;
 document.writeln(a)
 
+for (let key in myObj) {
+
+  if (typeof myObj[key] === "object") {
+    for (let innerKey in myObj[key]) {
+      console.log(innerKey, myObj[key][innerKey]);
+    }
+  } else {
+    console.log(key, myObj[key]);
+  }
+
+}
+
 // Object Methods:Methods are actions that can be performed on objects.Methods are functions stored as a property values.
 
 // Assign person.name to a function
 person.name = function () {
-  return (this.firstName + " " + this.lastName).toUpperCase;
+  return (this.firstName + " " + this.lastName);
 };
 document.writeln(person.name());
 document.writeln("<br><br>");
@@ -174,7 +186,7 @@ const person2 = {
   }
 };
 
-document.writeln(person.hello)
+document.writeln(person1.hello());
 document.writeln("<br>")
 
 /*this Alone
@@ -270,6 +282,6 @@ const person6 = {
 // Stringify Object
 let res4 = JSON.stringify(person6);
 document.writeln("<br><br>");
-
+        
 </script>
 </html>
